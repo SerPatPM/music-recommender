@@ -68,6 +68,7 @@ public class UtilController {
             emailService.enviarNotificacion(destinatario, asunto, cuerpo);
             return ResponseEntity.ok(Map.of("mensaje", "Correo enviado correctamente"));
         } catch (Exception e) {
+            e.printStackTrace();
             return ResponseEntity.internalServerError().body(Map.of("error", "Error al enviar el correo"));
         }
     }
