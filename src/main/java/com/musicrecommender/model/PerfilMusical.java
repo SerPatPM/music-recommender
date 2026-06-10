@@ -1,11 +1,14 @@
 package com.musicrecommender.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import jakarta.persistence.*;
 import lombok.Data;
 
 @Data
 @Entity
 @Table(name = "perfil_musical")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class PerfilMusical {
 
     @Id

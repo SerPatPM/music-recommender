@@ -4,9 +4,12 @@ import jakarta.persistence.*;
 import lombok.Data;
 import java.time.LocalDateTime;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 @Data
 @Entity
 @Table(name = "resultado_quiz")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class ResultadoQuiz {
 
     @Id

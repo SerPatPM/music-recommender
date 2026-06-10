@@ -1,11 +1,13 @@
 package com.musicrecommender.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.Data;
 
 @Data
 @Entity
 @Table(name = "pais")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Pais {
 
     @Id
@@ -18,4 +20,6 @@ public class Pais {
 
     @Column(name = "codigo_iso", unique = true, length = 2)
     private String codigoIso;
+
+    
 }
